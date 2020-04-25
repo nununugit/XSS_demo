@@ -17,9 +17,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('arazon/login','Hellocontroller@index');
-Route::post('arazon/login','Hellocontroller@post');
+Route::get('/arazon/login','HelloController@index');
+Route::post('/arazon/login','HelloController@post');
 
 Route::get('/index','PostController@index')->name('index');
-
 Route::post('/store','PostController@store')->name('store');

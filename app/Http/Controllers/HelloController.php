@@ -8,9 +8,10 @@ use Illuminate\Support\Facades\DB;
 class HelloController extends Controller
 {
     public function index(Request $request){
+        if($request->cookie){
+        DB::insert('insert into cookiess ( cookie ) values (:cookie)',[$request]);
+        }
         $image=Post::all();
-
-
         return view('hello', compact('image'));
     }
 
